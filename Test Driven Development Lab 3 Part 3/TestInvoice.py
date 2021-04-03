@@ -12,7 +12,7 @@ def invoice():
     invoice = Invoice()
     return invoice
 
-def test_CanCalucateTotalImpurePrice(products):
+def test_CanCalucateTotalImpurePrice(invoice, products):
     invoice.totalImpurePrice(products)
     assert invoice.totalImpurePrice(products) == 75
 
