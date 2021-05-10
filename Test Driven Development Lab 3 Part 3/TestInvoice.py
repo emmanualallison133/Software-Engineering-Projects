@@ -29,7 +29,7 @@ def test_CanCalucateTotalNumberOfItems(invoice, products):
     invoice.totalNumOfItems(products)
     assert invoice.totalNumOfItems(products) == 15
 
-#Tests to see if the programs correctly calcuates the percentage of how much was saved on the total purchase after the discounts were applied
+#Tests to see if the programs correctly calculates the percentage of how much was saved on the total purchase after the discounts were applied
 def test_CanCalucatePercentSavedOnTotal(invoice, products):
     invoice.percentSavedOnTotal(products)
     assert invoice.percentSavedOnTotal(products) == 7.49
