@@ -44,3 +44,17 @@ class Invoice:
                 continue
             else:
                 return userInput
+
+    def totalNumOfItems(self, products):
+        numOfItems = 0
+        for k, v in products.items():
+            numOfItems += int(v["qnt"])
+        self.numOfItems = numOfItems
+        return numOfItems
+
+    def percentSavedOnTotal(self, products):
+        percentSaved = 0
+        percentSaved = self.totalPurePrice(products) / self.totalImpurePrice(products) * 100
+        percentSaved = 100 - percentSaved
+        percentSaved = round(percentSaved, 2)
+        return percentSaved
