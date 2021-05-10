@@ -45,16 +45,20 @@ class Invoice:
             else:
                 return userInput
 
+    #Calculates the total number of items in the invoice
     def totalNumOfItems(self, products):
-        numOfItems = 0
-        for k, v in products.items():
-            numOfItems += int(v["qnt"])
-        self.numOfItems = numOfItems
-        return numOfItems
+        numOfItems = 0  #Holds the total number of items in the invoice
 
+        #Loops through the items in the products
+        for k, v in products.items():
+            numOfItems += int(v["qnt"]) #Accumulates the quantity of each items in the "numOfItems" variable
+        self.numOfItems = numOfItems
+        return numOfItems   #Returns the numOfItems variable
+
+    #Calculates the percentage saved on the total invoice when discounts are applied
     def percentSavedOnTotal(self, products):
-        percentSaved = 0
-        percentSaved = self.totalPurePrice(products) / self.totalImpurePrice(products) * 100
-        percentSaved = 100 - percentSaved
-        percentSaved = round(percentSaved, 2)
-        return percentSaved
+        percentSaved = 0    #Holds the percent of money saved
+        percentSaved = self.totalPurePrice(products) / self.totalImpurePrice(products) * 100    #Calculates the percentage of the pure price is to the impure price
+        percentSaved = 100 - percentSaved   #Difference is the percent saved
+        percentSaved = round(percentSaved, 2)   #Rounds the percentSaved to two decimal places
+        return percentSaved     #Returns the "percentSaved" variable

@@ -24,10 +24,12 @@ def test_CanCalucateTotalPurePrice(invoice, products):
     invoice.totalPurePrice(products)
     assert invoice.totalPurePrice(products) == 69.38
 
+#Tests to see if the programs correctly counts the total number of items purchased
 def test_CanCalucateTotalNumberOfItems(invoice, products):
     invoice.totalNumOfItems(products)
     assert invoice.totalNumOfItems(products) == 15
 
+#Tests to see if the programs correctly calcuates the percentage of how much was saved on the total purchase after the discounts were applied
 def test_CanCalucatePercentSavedOnTotal(invoice, products):
     invoice.percentSavedOnTotal(products)
     assert invoice.percentSavedOnTotal(products) == 7.49
